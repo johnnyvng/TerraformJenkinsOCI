@@ -57,7 +57,7 @@ resource "oci_load_balancer_hostname" "hostname2" {
 resource "oci_load_balancer_listener" "lb-listener1" {
   load_balancer_id         = "${oci_load_balancer.ProdLoadBalancer.id}"
   name                     = "http"
-  default_backend_set_name = "lb-bes1"
+  default_backend_set_name = "${oci_load_balancer_backend_set.lb-bes1.name}"
   hostname_names           = ["${oci_load_balancer_hostname.hostname1.name}", "${oci_load_balancer_hostname.hostname2.name}"]
   port                     = 80
   protocol                 = "HTTP"
@@ -69,7 +69,7 @@ resource "oci_load_balancer_listener" "lb-listener1" {
 resource "oci_load_balancer_listener" "lb-listener2" {
   load_balancer_id         = "${oci_load_balancer.ProdLoadBalancer.id}"
   name                     = "https"
-  default_backend_set_name = "lb-bes1"
+  default_backend_set_name = "${oci_load_balancer_backend_set.lb-bes1.name}"
   port                     = 443
   protocol                 = "HTTP"
 
@@ -81,7 +81,7 @@ resource "oci_load_balancer_listener" "lb-listener2" {
 
 resource "oci_load_balancer_backend" "lb-be1" {
   load_balancer_id = "${oci_load_balancer.ProdLoadBalancer.id}"
-  backendset_name  = "lb-bes1"
+  backendset_name  = "${oci_load_balancer_backend_set.lb-bes1.name}"
   ip_address       = "${oci_core_instance.WebAppSvr01.private_ip}"
   port             = 80
   backup           = false
@@ -92,11 +92,11 @@ resource "oci_load_balancer_backend" "lb-be1" {
 
 resource "oci_load_balancer_backend" "lb-be2" {
   load_balancer_id = "${oci_load_balancer.ProdLoadBalancer.id}"
-  backendset_name  = "lb-bes1"
+  backendset_name  = "${oci_load_balancer_backend_set.lb-bes1.name}"
   ip_address       = "${oci_core_instance.WebAppSvr02.private_ip}"
   port             = 80
   backup           = false
-  drain            = false
+  drain            = false  
   offline          = false
   weight           = 1
 }

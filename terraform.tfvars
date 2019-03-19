@@ -4,7 +4,7 @@
      user_ocid = "ocid1.user.oc1..aaaaaaaauswqglws5mp2yhqbfizqqflhddx3qlcsp5woqoj7saofthsaprhq"
      fingerprint = "0d:4d:f2:b8:d8:6b:32:f2:a4:63:2b:69:e6:48:ac:0e"
      private_key_path = "/var/lib/jenkins/.oci/oci_api_key.pem"
-     compartment_ocid = "ocid1.compartment.oc1..aaaaaaaaeu5ojynwt72i4ed2bjsgtggmkizvitfrkxwrkomirmk3qd3eyefq"
+     compartment_ocid = "ocid1.compartment.oc1..aaaaaaaabcdtf4knt56654my6tmyuwniihnlxn3nvojju4zdvkqo7kucrzlq"
      region = "us-ashburn-1"
 
  
