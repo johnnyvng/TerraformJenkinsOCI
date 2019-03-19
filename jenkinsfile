@@ -1,21 +1,45 @@
 pipeline {
-    agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+ agent any
+
+ environment {
+   SVC_ACCOUNT_KEY = credentials(‘terraform-auth’)
+ }
+
+ stages {
+
+   stage(‘Checkout’) {
+     steps {
+       checkout scm
+       sh ‘/var/lib/jenkins/workspace/terraform/env-vars’
+
+     }
+   }
+
+   stage(‘TF Plan’) {
+     steps {
+
+         sh ‘terraform init’
+         sh ‘terraform plan -out myplan’
+     }
+   }
+stage(‘Approval’) {
+     steps {
+       script {
+         def userInput = input(id: ‘confirm’, message: ‘Apply Terraform?’, parameters: [ [$class: ‘BooleanParameterDefinition’, defaultValue: false, description: ‘Apply terraform’, name: ‘confirm’] ])
+       }
+     }
+   }
+
+   stage(‘TF Apply’) {
+     steps {
+         sh ‘terraform apply -input=false myplan’
+     }
+   }
 }
+
+ }
+Message Input
+
+
+Message Himaja Adiraju
