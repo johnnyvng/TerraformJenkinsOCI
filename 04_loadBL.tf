@@ -57,7 +57,7 @@ resource "oci_load_balancer_hostname" "hostname2" {
 resource "oci_load_balancer_listener" "lb-listener1" {
   load_balancer_id         = "${oci_load_balancer.ProdLoadBalancer.id}"
   name                     = "http"
-  default_backend_set_name = "${oci_load_balancer_backend_set.lb-bes1.id}"
+  default_backend_set_name = "lb-bes1"
   hostname_names           = ["${oci_load_balancer_hostname.hostname1.name}", "${oci_load_balancer_hostname.hostname2.name}"]
   port                     = 80
   protocol                 = "HTTP"
@@ -69,7 +69,7 @@ resource "oci_load_balancer_listener" "lb-listener1" {
 resource "oci_load_balancer_listener" "lb-listener2" {
   load_balancer_id         = "${oci_load_balancer.ProdLoadBalancer.id}"
   name                     = "https"
-  default_backend_set_name = "${oci_load_balancer_backend_set.lb-bes1.id}"
+  default_backend_set_name = "lb-bes1"
   port                     = 443
   protocol                 = "HTTP"
 
