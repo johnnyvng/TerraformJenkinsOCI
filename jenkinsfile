@@ -18,8 +18,8 @@ pipeline {
    stage('Plan') {
      steps {
 
-         sh 'terraform init'
-         sh 'terraform plan -var-file=terraform.tfvars -out myplan'
+         sh 'sudo terraform init'
+         sh 'sudo terraform plan -var-file=terraform.tfvars -out myplan'
      }
    }
 stage('Approval') {
@@ -33,7 +33,7 @@ stage('Approval') {
    stage('Apply') {
      steps {
         container('terraform') {
-          sh 'terraform apply myplan'
+          sh 'sudo terraform apply myplan'
         }
          
      }
