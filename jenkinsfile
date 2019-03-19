@@ -1,12 +1,12 @@
 pipeline {
 
- agent any
+  agent any
 
- environment {
-   SVC_ACCOUNT_KEY = credentials(‘terraform-auth’)
- }
+  environment {
+    SVC_ACCOUNT_KEY = credentials('terraform-auth')
+  }
 
- stages {
+  stages {
 
    stage(‘Checkout’) {
      steps {
@@ -16,7 +16,7 @@ pipeline {
      }
    }
 
-   stage(‘TF Plan’) {
+   stage(‘Plan’) {
      steps {
 
          sh ‘terraform init’
