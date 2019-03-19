@@ -81,7 +81,7 @@ resource "oci_load_balancer_listener" "lb-listener2" {
 
 resource "oci_load_balancer_backend" "lb-be1" {
   load_balancer_id = "${oci_load_balancer.ProdLoadBalancer.id}"
-  backendset_name  = "${oci_load_balancer_backend_set.lb-bes1.id}"
+  backendset_name  = "lb-bes1"
   ip_address       = "${oci_core_instance.WebAppSvr01.private_ip}"
   port             = 80
   backup           = false
@@ -92,7 +92,7 @@ resource "oci_load_balancer_backend" "lb-be1" {
 
 resource "oci_load_balancer_backend" "lb-be2" {
   load_balancer_id = "${oci_load_balancer.ProdLoadBalancer.id}"
-  backendset_name  = "${oci_load_balancer_backend_set.lb-bes1.id}"
+  backendset_name  = "lb-bes1"
   ip_address       = "${oci_core_instance.WebAppSvr02.private_ip}"
   port             = 80
   backup           = false
