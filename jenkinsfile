@@ -11,7 +11,6 @@ pipeline {
    stage('Checkout') {
      steps {
        checkout scm
-       sh '/var/lib/jenkins/workspace/TerraformJenkinsOCI/terraform.tfvars'
 
      }
    }
@@ -20,7 +19,7 @@ pipeline {
      steps {
 
          sh 'terraform init'
-         sh 'terraform plan -out myplan'
+         sh 'terraform plan -var-file=terraform.tfvars -out myplan'
      }
    }
 stage('Approval') {
