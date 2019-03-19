@@ -32,9 +32,7 @@ stage('Approval') {
 
    stage('Apply') {
      steps {
-        container('terraform') {
           sh 'sudo terraform apply myplan'
-        }
          
      }
    }
