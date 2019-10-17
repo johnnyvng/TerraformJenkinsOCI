@@ -2,13 +2,10 @@
 
      tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaa5txfxrudc5ezitovlpjznw6b3l6sqvkzddepsfu4es2i4x2xyeia"
      user_ocid = "ocid1.user.oc1..aaaaaaaauswqglws5mp2yhqbfizqqflhddx3qlcsp5woqoj7saofthsaprhq"
-     fingerprint = "0d:4d:f2:b8:d8:6b:32:f2:a4:63:2b:69:e6:48:ac:0e"
+     fingerprint = "d0:b9:84:4b:f1:d4:8a:3b:8d:a5:68:42:10:c3:88:91"
      private_key_path = "/var/lib/jenkins/.oci/oci_api_key.pem"
-     # Child Compartment IaaS-WindowsAD-Deployment
      compartment_ocid = "ocid1.compartment.oc1..aaaaaaaa7zvoybpv7axrx4zzu5ehnqluuj5bi4luomfhh7qpjzxptewvlfgq"
-     # Child Compartment IaaS-Terraform-Jenkins-CICD
-     # compartment_ocid = "ocid1.compartment.oc1..aaaaaaaabcdtf4knt56654my6tmyuwniihnlxn3nvojju4zdvkqo7kucrzlq"
-     region = "us-ashburn-1"
+     region="us-ashburn-1"
 
  
 # ---- availability domain (1, 2 or 3)
@@ -20,5 +17,5 @@
  
 # -- variables for BM/VM creation
 
-     BootStrapFile_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/bootstrap_ol7"
-     ssh_public_key_file_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/id_rsa.pub"
+     #BootStrapFile_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/bootstrap_ol7"
+     #ssh_public_key_file_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/id_rsa.pub"
