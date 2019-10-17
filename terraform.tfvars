@@ -19,3 +19,5 @@
 
      # BootStrapFile_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/bootstrap_ol7"
      # ssh_public_key_file_ol7 = "/var/lib/jenkins/workspace/TerraformJenkinsOCI/id_rsa.pub"
+     ssh_private_key = "/var/lib/jenkins/workspace/TerraformJenkins/id_rsa"
+     ssh_public_key = "/var/lib/jenkins/workspace/TerraformJenkins/id_rsa.pub"
