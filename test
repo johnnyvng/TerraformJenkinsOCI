@@ -4,4 +4,8 @@ test3
 test4
 test5
 test6
+<<<<<<< HEAD
 test7
+=======
+test7
+>>>>>>> eec6b4524bba9424c8eb709879d92306c0904fb1
